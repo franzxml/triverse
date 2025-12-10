@@ -1,7 +1,7 @@
 <?php
 /**
- * View: Home Index (V9)
- * * Update: Clean Robot Mascot
+ * View: Home Index (Final Clean)
+ * * Update: Simpler Texts, Vector-style Robot, Clean Buttons
  */
 ?>
 
@@ -11,19 +11,20 @@
             
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Tracking Progress
-                    Genshin Impact,
-                    Honkai: Star Rail,
-                    & Wuthering Waves
+                    Kelola Progress<br>
+                    Gacha-mu.
                 </h1>
+                
                 <p class="hero-subtitle">
-                    Satu tempat terpusat untuk memantau artefak, material, dan pity counter Anda. Fokus pada gacha, biarkan Genhowa mencatat sisanya dengan presisi.
+                    Pantau <strong>Artefak</strong> (Genshin), <strong>Relic</strong> (HSR), & <strong>Echo</strong> (WuWa). 
+                    Hitung pity Primogems, Jades, & Astrites. Fokus gacha, biarkan Genhowa mencatat sisanya.
                 </p>
-                <button id="ctaButton" class="btn-primary">Mulai Tracking Sekarang</button>
+                
+                <button id="ctaButton" class="btn-primary">Mulai</button>
             </div>
 
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1589254065831-402d76b96297?q=80&w=1000&auto=format&fit=crop" alt="Cute Robot Vector Style">
+                <img src="https://images.unsplash.com/photo-1535378437323-955a6d7de748?q=80&w=800&auto=format&fit=crop" alt="Genhowa Robot Mascot">
             </div>
 
         </div>
