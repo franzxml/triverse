@@ -1,6 +1,6 @@
 /*
- * Style Dasar Genhowa (Updated V2)
- * Fix: Navbar Alignment & Hover Color
+ * Style Dasar Genhowa (Updated V3)
+ * Theme: Clean White, Aesthetic Minimalist
  */
 
 /* Import Google Fonts Poppins */
@@ -13,144 +13,211 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Menggunakan Poppins */
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    background-color: #f8f9fa;
+    background-color: #ffffff; /* Full White Background */
     color: #333;
 }
 
-/* Container standar untuk isi konten tengah */
+/* Container standar */
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Navbar Utama */
+/* --- Navbar (White Theme) --- */
 .navbar {
-    background-color: #1a1a1a;
-    color: #fff;
-    padding: 1rem 0; /* Padding vertikal */
+    background-color: #ffffff; /* Ubah ke Putih */
+    padding: 1.2rem 0;
     width: 100%;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    /* Shadow lebih halus untuk memisahkan dengan konten */
+    box-shadow: 0 2px 15px rgba(0,0,0,0.03); 
+    position: sticky; /* Opsional: Agar navbar menempel saat scroll */
+    top: 0;
+    z-index: 1000;
 }
 
-/* Container khusus navbar: FULL WIDTH */
-/* Menggunakan class container-fluid agar elemen mentok ke ujung kiri-kanan */
 .navbar .container-fluid {
     display: flex;
-    justify-content: space-between; /* KUNCI: Memisahkan Brand (kiri) dan Menu (kanan) */
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 50px; /* Jarak aman dari sisi layar */
+    padding: 0 50px;
 }
 
-/* Brand / Logo */
+/* Brand menjadi Hitam */
 .navbar .brand {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #fff;
+    color: #1a1a1a; 
     text-decoration: none;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.5px;
 }
 
-/* Navigasi Links */
 .navbar .nav-links {
     list-style: none;
     display: flex;
-    margin: 0; /* Pastikan tidak ada margin default */
+    margin: 0;
 }
 
 .navbar .nav-links li {
-    margin-left: 35px; /* Jarak antar menu */
+    margin-left: 40px;
 }
 
+/* Link menjadi Abu Gelap */
 .navbar .nav-links a {
-    color: #cccccc; /* Warna default agak abu */
+    color: #666; 
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
     transition: all 0.3s ease;
 }
 
-/* Hover Effect: Putih Terang & Glow (Bukan Hijau) */
+/* Hover: Hitam Tegas */
 .navbar .nav-links a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    color: #000;
 }
 
-/* Hero Section */
+/* --- Hero Section (Split Layout) --- */
 .hero {
     background-color: #fff;
-    padding: 120px 0;
-    text-align: center;
-    border-bottom: 1px solid #eee;
+    padding: 80px 0 100px 0;
+    /* Tidak ada border bottom agar menyatu dengan features */
+}
+
+/* Menggunakan Flexbox untuk membagi 2 kolom (Teks Kiri, Gambar Kanan) */
+.hero .hero-wrapper {
+    display: flex;
+    align-items: center; /* Vertikal center */
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1; /* Mengambil 50% lebar */
+    padding-right: 20px;
+}
+
+.hero-image {
+    flex: 1; /* Mengambil 50% lebar */
+    display: flex;
+    justify-content: center;
+}
+
+/* Styling Gambar Estetik */
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    /* Drop shadow lembut pada gambar agar pop-up */
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
+    animation: float 6s ease-in-out infinite; /* Animasi melayang halus */
+}
+
+/* Animasi Melayang */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
 }
 
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
-    margin-bottom: 15px;
+    line-height: 1.2;
+    margin-bottom: 20px;
     color: #1a1a1a;
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: #666;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
+    max-width: 90%;
 }
 
+/* Tombol Utama */
 .btn-primary {
     display: inline-block;
-    background-color: #1a1a1a;
+    background-color: #1a1a1a; /* Tetap hitam untuk kontras tinggi */
     color: #fff;
-    padding: 12px 35px;
-    border-radius: 50px;
+    padding: 14px 40px;
+    border-radius: 8px; /* Lebih kotak sedikit, modern */
     border: none;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
     background-color: #333;
     transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Features */
+/* --- Features Section --- */
 .features {
     display: flex;
     justify-content: space-between;
-    padding: 80px 20px;
+    padding: 50px 20px 100px 20px;
     gap: 30px;
 }
 
 .feature-card {
-    background: #fff;
+    background: #fff; /* White on White (Clean) */
     padding: 40px 30px;
     flex: 1;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 16px;
+    border: 1px solid #f0f0f0; /* Border tipis pengganti shadow tebal */
     text-align: center;
-    transition: transform 0.3s;
+    transition: all 0.3s ease;
 }
 
 .feature-card:hover {
-    transform: translateY(-10px);
+    border-color: #1a1a1a; /* Efek hover border hitam */
+    transform: translateY(-5px);
 }
 
 .feature-card h3 {
     margin-bottom: 15px;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    color: #1a1a1a;
 }
 
-/* Footer */
+.feature-card p {
+    font-size: 0.95rem;
+    color: #777;
+}
+
+/* --- Footer (White Theme) --- */
 .footer {
-    background-color: #1a1a1a;
-    color: #666;
+    background-color: #ffffff; /* Putih */
+    color: #888;
     text-align: center;
     padding: 40px 0;
-    margin-top: 80px;
+    margin-top: 50px;
     font-size: 0.9rem;
+    border-top: 1px solid #eaeaea; /* Garis pemisah halus */
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+    .hero .hero-wrapper {
+        flex-direction: column-reverse; /* Gambar di atas, teks di bawah */
+        text-align: center;
+    }
+
+    .hero-subtitle {
+        margin: 0 auto 30px auto;
+    }
+
+    .navbar .container-fluid {
+        padding: 0 20px;
+    }
+    
+    .features {
+        flex-direction: column;
+    }
 }
