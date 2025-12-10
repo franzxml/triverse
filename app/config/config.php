@@ -6,8 +6,8 @@
  */
 
 // Base URL: Alamat dasar aplikasi
-// Ubah ini jika nama folder atau domain berubah
-define('BASEURL', 'http://localhost/genhowa/public');
+// Kita sesuaikan dengan Virtual Host dari Laragon
+define('BASEURL', 'http://genhowa.test');
 
 // DB Config (Persiapan untuk nanti)
 define('DB_HOST', 'localhost');

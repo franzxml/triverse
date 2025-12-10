@@ -1,16 +1,11 @@
 <IfModule mod_rewrite.c>
-    # Mengaktifkan modul rewrite engine Apache
-    Options -Multiviews
+    # Mengaktifkan Rewrite Engine
     RewriteEngine On
 
-    # Pengecekan: Jika yang diakses BUKAN folder (!-d)
-    RewriteCond %{REQUEST_FILENAME} !-d
-    # Pengecekan: Jika yang diakses BUKAN file (!-f)
-    RewriteCond %{REQUEST_FILENAME} !-f
-    
-    # Aturan: Alihkan semua request lain ke index.php
-    # url=$1 artinya mengambil semua segmen URL setelah nama domain/folder
-    # [QSA] = Query String Append (menjaga parameter lain jika ada)
-    # [L] = Last (berhenti memproses aturan lain jika ini cocok)
-    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+    # Aturan 1: Arahkan root domain (kosong) ke folder public
+    RewriteRule ^$ public/ [L]
+
+    # Aturan 2: Arahkan semua request lainnya ke folder public
+    # $1 mengambil semua karakter setelah nama domain
+    RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
